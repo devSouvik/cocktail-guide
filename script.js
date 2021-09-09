@@ -1,5 +1,5 @@
-async function getApi() {
-  let drinkName = document.getElementById("name").value;
+async function getSearch() {
+  let drinkName = document.getElementById("cocktail-name").value;
   const api_url = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drinkName}`;
   const response = await fetch(api_url);
   const data = await response.json();
@@ -7,17 +7,19 @@ async function getApi() {
   let imageUrl = `${data["drinks"][0]["strDrinkThumb"]}`;
   let drink_name = `${data["drinks"][0]["strDrink"]}`;
   let drink_Type = `${data["drinks"][0]["strAlcoholic"]}`;
-  let ingredients = `${
-    (data["drinks"][0]["strIngredient1"],
-    data["drinks"][0]["strIngredient2"],
-    data["drinks"][0]["strIngredient3"],
-    data["drinks"][0]["strIngredient4"])
-  }`;
+  let ingredients = [
+    `${
+      (data["drinks"][0]["strIngredient1"],
+      data["drinks"][0]["strIngredient2"],
+      data["drinks"][0]["strIngredient3"],
+      data["drinks"][0]["strIngredient4"])
+    }`,
+  ];
   let preparation = `${data["drinks"][0]["strInstructions"]}`;
   let videourl = `${data["drinks"][0]["strVideo"]}`;
   let display_text = `Drink Type: ${drink_Type}\nDrink Ingredients: ${ingredients}\nPreparation: ${preparation}`;
 
-  if (imageUrl !== "null") {
+  if (imageUrl !== null) {
     document.getElementById("thumbnail-image").src = imageUrl;
   }
   document.getElementById("cardTitle").innerText = drink_name;
