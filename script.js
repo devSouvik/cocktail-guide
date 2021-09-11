@@ -7,23 +7,40 @@ async function getSearch() {
   let imageUrl = `${data["drinks"][0]["strDrinkThumb"]}`;
   let drink_name = `${data["drinks"][0]["strDrink"]}`;
   let drink_Type = `${data["drinks"][0]["strAlcoholic"]}`;
-  let ingredients = [
-    `${
-      (data["drinks"][0]["strIngredient1"],
-      data["drinks"][0]["strIngredient2"],
-      data["drinks"][0]["strIngredient3"],
-      data["drinks"][0]["strIngredient4"])
-    }`,
+  let [a1, a2, a3, a4, a5, a6, a7, a8, a9] = [
+    data["drinks"][0]["strIngredient1"],
+    data["drinks"][0]["strIngredient2"],
+    data["drinks"][0]["strIngredient3"],
+    data["drinks"][0]["strIngredient4"],
+    data["drinks"][0]["strIngredient5"],
+    data["drinks"][0]["strIngredient6"],
+    data["drinks"][0]["strIngredient7"],
+    data["drinks"][0]["strIngredient8"],
+    data["drinks"][0]["strIngredient9"],
   ];
   let preparation = `${data["drinks"][0]["strInstructions"]}`;
   let videourl = `${data["drinks"][0]["strVideo"]}`;
-  let display_text = `Drink Type: ${drink_Type}\nDrink Ingredients: ${ingredients}\nPreparation: ${preparation}`;
 
-  if (imageUrl !== null) {
+  if (imageUrl === "null") {
+    console.log("sorry, there's no video for this item");
+  } else {
     document.getElementById("thumbnail-image").src = imageUrl;
   }
   document.getElementById("cardTitle").innerText = drink_name;
-  document.getElementById("cardText").innerText = display_text;
+  document.getElementById("drinkType").innerText = drink_Type;
+  document.getElementById("ingredients").innerText = [
+    a1,
+    a2,
+    a3,
+    a4,
+    a5,
+    a6,
+    a7,
+    a8,
+    a9,
+  ];
+  document.getElementById("procedure").innerText = preparation;
+  // document.getElementById("cardText").innerText = display_text;
   document.getElementById("videoButton").href = videourl;
 
   console.log(imageUrl);

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cocktail guide</title>
+    <title>Cocktail Guide</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -13,8 +13,73 @@
     />
   </head>
   <body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img
+            src="https://www.thecocktaildb.com/images/logo.png"
+            alt=""
+            height="30"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" onclick="randomApi()" aria-current="page">
+                Random cocktail</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                More
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Non-Alcoholic</a></li>
+                <li><a class="dropdown-item" href="#">Alcoholic</a></li>
+                <a class="dropdown-item" href="#">Ordinary Drinks</a></li>
+                <li><a class="dropdown-item" href="#">Cocktails</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <form class="d-flex">
+            <input id="cocktail-name" class="form-control me-2"type="search"
+            placeholder="Search by name"
+              aria-label="Search"
+            />
+            <input type="button" id="get-name-button" value="Search" onclick="getSearch()"/>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <!-- navbar ends here -->
+<div class="container my-5 d-flex justify-content-center">
+    <button onclick="randomApi()">get random</button>
+  </div>
+
     <!-- card here -->
-    <div class="container my-3 d-flex justify-content-center">
+    <div class="container my-3 d-flex justify-content-center rounded-3">
       <div class="card" style="width: 18rem">
         <img
           id="thumbnail-image1"
@@ -22,28 +87,28 @@
           class="card-img-top"
           alt="Image here"
         />
-        <div id="div1" class="card-body">
-          <h5 id="cardTitle1" class="card-title">
-            Let me show you your fav cocktail
-          </h5>
+        <div class="card" style="width: 18rem;">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item" id = "cardTitle1"></li>
+            <li class="list-group-item" id="drinkType1" ></li>
+            <li class="list-group-item" id="ingredients1"></li>
+            <li class="list-group-item" id="procedure1"></li>
+          </ul>
 
-          <p id="cardText1" class="card-text"></p>
-          <a id="videoButton1" href="" class="btn btn-primary">Video</a>
+          <a id="videoButton1" href="#" class="btn btn-primary">Video</a>
+        </div>
         </div>
       </div>
     </div>
 
     <!-- card ends here -->
 
-    <!-- card2 -->
-
-    <!-- card2 ends -->
-
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
       crossorigin="anonymous"
     ></script>
+    <script src="random.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
