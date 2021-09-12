@@ -43,4 +43,6 @@ async function randomApi() {
   document.getElementById("videoButton1").href = videourl1;
 
   console.log(imageUrl1);
+
+  // window.location.href = "random.html";
 }
