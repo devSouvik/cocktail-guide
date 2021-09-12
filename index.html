@@ -18,9 +18,10 @@
       <div class="container-fluid">
         <a class="navbar-brand" href="index.html">
           <img
-            src="https://www.thecocktaildb.com/images/logo.png"
+            src="final1.png"
             alt=""
             height="30"
+            width="100"
           />
         </a>
         <button
@@ -37,9 +38,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" onclick="randomApi()" aria-current="page" href="random.html">
-                Random cocktail</a>
-            </li>
+              <li class="nav-item">
+                <a class="nav-link active" onclick="randomApi()" aria-current="page" href="random.html"> <img width="20" src="https://img.icons8.com/external-kiranshastry-gradient-kiranshastry/64/000000/external-random-interface-kiranshastry-gradient-kiranshastry.png"/>
+                  Random cocktail</a>
+              </li>
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
@@ -52,10 +54,10 @@
                 More
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Non-Alcoholic</a></li>
-                <li><a class="dropdown-item" href="#">Alcoholic</a></li>
-                <a class="dropdown-item" href="#">Ordinary Drinks</a></li>
-                <li><a class="dropdown-item" href="#">Cocktails</a></li>
+                <li><a class="dropdown-item" href="#">Non-Alcoholic <img width="15" src="https://img.icons8.com/ios-filled/30/000000/no-alcohol.png"/></a></li>
+                <li><a class="dropdown-item" href="#">Alcoholic <img width="15" src="https://img.icons8.com/ios-filled/50/000000/wine-glass.png"/></a></li>
+                <a class="dropdown-item" href="#">Ordinary Drinks <img width="20" src="https://img.icons8.com/ios/50/000000/coffee--v1.png"/></a></li>
+                <li><a class="dropdown-item" href="#">Cocktails <img width="18" src="https://img.icons8.com/ios-filled/50/000000/cocktail.png"/></a></li>
                 <li><hr class="dropdown-divider" /></li>
                 <li>
                   <a class="dropdown-item" href="#">Something else here</a>
@@ -113,10 +115,10 @@
         />
         <div class="card" style="width: 18rem;">
           <ul class="list-group list-group-flush">
-            <li class="list-group-item" id = "cardTitle">item</li>
-            <li class="list-group-item" id="drinkType" >drinkType</li>
-            <li class="list-group-item" id="ingredients"></li>
-            <li class="list-group-item" id="procedure">procedure</li>
+            <li class="list-group-item" id = "cardTitle">Item: </li>
+            <li class="list-group-item" id="drinkType" >DrinkType: </li>
+            <li class="list-group-item" id="ingredients">Ingredients: </li>
+            <li class="list-group-item" id="procedure">Procedure: </li>
           </ul>
 
           <a id="videoButton" href="#" class="btn btn-primary">Video</a>
